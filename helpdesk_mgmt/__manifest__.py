@@ -4,7 +4,7 @@
     "name": "Helpdesk Management",
     "summary": """
         Helpdesk""",
-    "version": "16.0.2.6.2",
+    "version": "17.0.2.6.2",
     "license": "AGPL-3",
     "category": "After-Sales",
     "author": "AdaptiveCity, "
