@@ -20,7 +20,7 @@ class HelpdeskTicket(models.Model):
     def _compute_user_id(self):
         for ticket in self:
             if not ticket.user_id and ticket.team_id:
-                ticket.user_id = ticket.team_id.alias_user_id
+                ticket.user_id = ticket.team_id.user_id
 
     @api.model
     def _read_group_stage_ids(self, stages, domain, order):
@@ -217,7 +217,7 @@ class HelpdeskTicket(models.Model):
                 {
                     # Need to set mass_mail so that the email will always be sent
                     "composition_mode": "mass_mail",
-                    "auto_delete_message": True,
+                    "auto_delete": True,
                     "subtype_id": self.env["ir.model.data"]._xmlid_to_res_id(
                         "mail.mt_note"
                     ),

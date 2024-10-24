@@ -141,7 +141,7 @@
                         string="Assign to me"
                         name="assign_to_me"
                         type="object"
-                        attrs="{'invisible' : [('user_id', '!=', False)]}"
+                        invisible="user_id"
                     />
                     <field
                         name="stage_id"
@@ -154,7 +154,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
                     <div class="oe_button_box" name="button_box">
                     </div>
@@ -231,8 +231,8 @@
                 <field name="partner_id" optional="hide" widget="many2one_avatar" />
                 <field name="partner_name" optional="show" />
                 <field name="user_id" optional="show" widget="many2one_avatar_user" />
-                <field name="unattended" invisible="1" />
-                <field name="closed" invisible="1" />
+                <field name="unattended" column_invisible="True" />
+                <field name="closed" column_invisible="True" />
                 <field
                     name="tag_ids"
                     widget="many2many_tags"
